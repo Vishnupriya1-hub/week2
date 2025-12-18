@@ -9,25 +9,28 @@ form.addEventListener("submit", function (e) {
 
     let isValid = true;
 
-    if (username.value.trim() === "") {
+    
+    if (!username.value.trim()) {
         userError.textContent = "Username is required";
         isValid = false;
     } else {
         userError.textContent = "";
     }
 
-    if (password.value.trim() === "") {
+    
+    if (!password.value.trim()) {
         passError.textContent = "Password is required";
         isValid = false;
     } else if (password.value.length < 6) {
-        passError.textContent = "Password must be at least 6 characters";
+        passError.textContent = "Password must be at least 6 characters long";
         isValid = false;
     } else {
         passError.textContent = "";
     }
 
+    
     if (isValid) {
-        alert("Login successful!");
+        alert(`Welcome, ${username.value}! Login successful.`);
         form.reset();
     }
 });
