@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>📚 Student Marks</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: #ffffff;
+            width: 420px;
+            padding: 30px 25px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 5px;
+            color: #4f46e5;
+            font-size: 24px;
+        }
+
+        h2 span {
+            margin-right: 10px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="number"] {
+            flex: 1;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: pink;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            max-height: 220px;
+            overflow-y: auto;
+        }
+
+        li {
+            background: #eef2ff;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        li:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .name {
+            font-weight: 600;
+            color: #1e1b4b;
+        }
+
+        .marks {
+            background: #4f46e5;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+        }
+
+        footer {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+
+        
+        ul::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ul::-webkit-scrollbar-thumb {
+            background-color: pink;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2><span>📚</span>Student Marks</h2>
+        
+
+        <form id="studentForm">
+            <input type="text" id="nameInput" placeholder="Student Name" required>
+            <input type="number" id="marksInput" placeholder="Marks" required min="0" max="100">
+            <button type="submit">Add</button>
+        </form>
+
+        <ul id="studentList"></ul>
+
+        <footer>JavaScript Day 2 Task</footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

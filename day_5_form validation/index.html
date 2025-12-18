@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="login-card">
+            <h2>🔐 Welcome </h2>
+            <p class="subtitle">Please login to your account</p>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Username">
+                    <small class="error" id="userError"></small>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password">
+                    <small class="error" id="passError"></small>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

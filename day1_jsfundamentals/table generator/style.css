@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #43cea2, #185a9d);
+    background: linear-gradient(135deg, #ce438f, #185a9d);
 }
 
 .container {
@@ -44,7 +44,7 @@ input {
 }
 
 input:focus {
-    border-color: #43cea2;
+    border-color: #ce434f;
 }
 
 button {
@@ -53,14 +53,14 @@ button {
     border: none;
     border-radius: 6px;
     background: #43cea2;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 15px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 button:hover {
-    background: #36b18d;
+    background: white;
 }
 
 pre {
