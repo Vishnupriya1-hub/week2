@@ -1,39 +1,35 @@
-const countEl = document.getElementById("count");
-const statusEl = document.getElementById("status");
+const form = document.getElementById("loginForm");
+const username = document.getElementById("username");
+const password = document.getElementById("password");
+const userError = document.getElementById("userError");
+const passError = document.getElementById("passError");
 
-const incBtn = document.querySelector("#inc");
-const decBtn = document.querySelector("#dec");
-const resetBtn = document.querySelector("#reset");
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-let count = 0;
+    let isValid = true;
 
-function updateStatus() {
-    if (count > 0) {
-        statusEl.innerText = "Counter is Positive";
-    } else if (count < 0) {
-        statusEl.innerText = "Counter is Negative";
+    
+    if (username.value.trim() === "") {
+        userError.textContent = "Username is required";
+        isValid = false;
     } else {
-        statusEl.innerText = "Counter is Neutral";
+        userError.textContent = "";
     }
-}
 
+    
+    if (password.value.trim() === "") {
+        passError.textContent = "Password is required";
+        isValid = false;
+    } else if (password.value.length < 6) {
+        passError.textContent = "Password must be at least 6 characters";
+        isValid = false;
+    } else {
+        passError.textContent = "";
+    }
 
-incBtn.addEventListener("click", () => {
-    count++;
-    countEl.innerText = count;
-    updateStatus();
-});
-
-
-decBtn.addEventListener("click", () => {
-    count--;
-    countEl.innerText = count;
-    updateStatus();
-});
-
-
-resetBtn.addEventListener("click", () => {
-    count = 0;
-    countEl.innerText = count;
-    updateStatus();
+    if (isValid) {
+        alert("Login successful!");
+        form.reset();
+    }
 });
