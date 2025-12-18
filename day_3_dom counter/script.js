@@ -1,36 +1,39 @@
-const form = document.getElementById("loginForm");
-const username = document.getElementById("username");
-const password = document.getElementById("password");
-const userError = document.getElementById("userError");
-const passError = document.getElementById("passError");
+const countEl = document.getElementById("count");
+const statusEl = document.getElementById("status");
 
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
+const incBtn = document.querySelector("#inc");
+const decBtn = document.querySelector("#dec");
+const resetBtn = document.querySelector("#reset");
 
-    let isValid = true;
+let count = 0;
 
-    
-    if (!username.value.trim()) {
-        userError.textContent = "Username is required";
-        isValid = false;
+function updateStatus() {
+    if (count > 0) {
+        statusEl.innerText = "Counter is Positive";
+    } else if (count < 0) {
+        statusEl.innerText = "Counter is Negative";
     } else {
-        userError.textContent = "";
+        statusEl.innerText = "Counter is Neutral";
     }
+}
 
-    
-    if (!password.value.trim()) {
-        passError.textContent = "Password is required";
-        isValid = false;
-    } else if (password.value.length < 6) {
-        passError.textContent = "Password must be at least 6 characters long";
-        isValid = false;
-    } else {
-        passError.textContent = "";
-    }
 
-    
-    if (isValid) {
-        alert(`Welcome, ${username.value}! Login successful.`);
-        form.reset();
-    }
+incBtn.addEventListener("click", () => {
+    count++;
+    countEl.innerText = count;
+    updateStatus();
+});
+
+
+decBtn.addEventListener("click", () => {
+    count--;
+    countEl.innerText = count;
+    updateStatus();
+});
+
+
+resetBtn.addEventListener("click", () => {
+    count = 0;
+    countEl.innerText = count;
+    updateStatus();
 });
