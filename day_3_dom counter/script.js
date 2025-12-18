@@ -9,7 +9,6 @@ form.addEventListener("submit", function (e) {
 
     let isValid = true;
 
-    
     if (username.value.trim() === "") {
         userError.textContent = "Username is required";
         isValid = false;
@@ -17,7 +16,6 @@ form.addEventListener("submit", function (e) {
         userError.textContent = "";
     }
 
-    
     if (password.value.trim() === "") {
         passError.textContent = "Password is required";
         isValid = false;
